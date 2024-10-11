@@ -19,11 +19,12 @@ func main() {
 	}
 	i = strings.TrimSpace(i)
 	score, _ := strconv.ParseInt(i, 16, 32)
+
+	var grade string
 	if score >= 60 {
-		fmt.Println("A")
-		fmt.Printf("%d\n", score)
+		grade = "A"
 	} else {
-		fmt.Println("BCDF")
-		fmt.Printf("%d\n", score)
+		grade = "BCDF"
 	}
+	fmt.Printf("%d점은 %s등급 입니다.\n", score, grade)
 }
