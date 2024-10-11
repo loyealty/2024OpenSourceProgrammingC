@@ -5,16 +5,25 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
 	in := bufio.NewReader(os.Stdin)
-	fmt.Print("Input your name : ")
-	name, err := in.ReadString('\n')
+	fmt.Print("Input your name: ")
+	i, err := in.ReadString('\n')
 
 	if err != nil {
 		log.Fatal(err)
+	}
+	i = strings.TrimSpace(i)
+	score, _ := strconv.ParseInt(i, 16, 32)
+	if score >= 60 {
+		fmt.Println("A")
+		fmt.Printf("%d\n", score)
 	} else {
-		fmt.Println(name)
+		fmt.Println("BCDF")
+		fmt.Printf("%d\n", score)
 	}
 }
