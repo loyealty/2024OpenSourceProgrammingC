@@ -46,6 +46,6 @@ func main() {
 	if win {
 		fmt.Println("당신이 이겼습니다.")
 	} else {
-		fmt.Println("당신이 패배했습니다.")
+		fmt.Printf("당신이 패배했습니다. 정답은 %d 입니다.", answer)
 	}
 }
