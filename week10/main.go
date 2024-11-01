@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	//fmt.Printf("%f\n", math.Sqrt(19.0))
 	fmt.Print("Input number : ")
 	in := bufio.NewReader(os.Stdin)
 	i, err := in.ReadString('\n')
@@ -24,22 +25,21 @@ func main() {
 	}
 
 	var isPrime bool = true
-	// bug fix
-	if n <= 1 { // A prime number is a natural number greater than 1 that has only 1 and itself as divisors.
+	if n <= 1 {
 		isPrime = false
 	} else if n == 2 {
 		isPrime = true
 	} else if n%2 == 0 {
 		isPrime = false
 	} else {
-		j := 2
+		j := 3
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
-				break // performance up
+				break
 			}
-			fmt.Printf("%d ", j) // Check j loop
-			j++
+			fmt.Printf("%d ", j)
+			j = j + 2
 		}
 	}
 
