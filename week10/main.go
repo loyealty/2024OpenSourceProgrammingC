@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -28,12 +29,12 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < n {
+		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
-				break
+				break // performance up
 			}
-			fmt.Printf("%d", i) // check j loop
+			fmt.Printf("%d ", j) // Check j loop
 			j++
 		}
 	}
